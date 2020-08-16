@@ -127,3 +127,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Custom stuff
+# save md files not ipynb so don't accidentally save output
+*.ipynb
