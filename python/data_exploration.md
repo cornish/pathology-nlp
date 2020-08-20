@@ -15,12 +15,20 @@ jupyter:
 # Notebook for exploring Pathology dataset
 
 ### Questions for Toby:
-* case_id - year case was evaluated?
-* From Cortex dataset AddendAmend is empty?
-* Look at bladder and prostate only. See cortex example. So for some that have other parts, only review prostate/bladder portion?
+* case_id - year case was evaluated.
+* From Cortex dataset AddendAmend is empty? Yes.
+* Look at bladder and prostate only. See cortex example. So for some that have other parts, for now only review prostate/bladder portion. Parse what we can from others. For synoptic reports that aren't fully parseable,  flag so pathology can manually review.
 * "Construct a comprehensive database of this structured data for use by the CU community" - What data elements desired here?
   * Columns from CAP protocol such as Procedure, Weight, Size, Histologic Type, Histologic Grade, etc?
+  * Synoptic report is at the case level
 * Where to get previous versions of CAP protocol? Some available at https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates, but seems to only go back to ~2012
+
+### Recommendations/Tips from Toby:
+* Cases will have anywhere from 0, 1, or 2 synoptic reports.
+* Newer stuff in COPATH will probably be easiest to parse and more consistent
+* CORTEX wouldn't allow amendments.
+* While earliest CAP Synoptic report recommendations were released around 1997, UCH didn't start using them until maybe 2005
+* Synoptic report is at the case level; while synoptic report may not have Prostate/Bladder in the specimen section, it may cover details about Prostate/Bladder
 
 ```python
 import pandas as pd
@@ -90,6 +98,7 @@ cortex
 
 ```python
 cortex.parts.value_counts(dropna=False).head(10)
+# Prostate may mean resection, biopsy, or others
 ```
 
 ```python
@@ -105,6 +114,7 @@ cortex.hist(column=[col for col in cortex.columns if '_length' in col], bins=50,
 ```
 
 ```python
+# this is an example that is not a report with a Synoptic report - discard this one
 for index, val in cortex.iloc[0].iteritems():
     print(index, ':')
     print(val, '\n')
