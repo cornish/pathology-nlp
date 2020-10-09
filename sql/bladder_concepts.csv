@@ -1,0 +1,157 @@
+concept, data_type, parent
+Specimen,,
+Procedure,,Specimen
+Partial cystectomy,boolean,Procedure
+Radical cystectomy (total cystectomy),boolean,Procedure
+Radical cystoprostatectomy,boolean,Procedure
+Anterior exenteration,boolean,Procedure
+Other (specify),text,Procedure
+Cannot be determined,boolean,Procedure
+
+Tumor,,
+Tumor Site,,Tumor
+trigone,boolean,Tumor Site
+right lateral wall,boolean,Tumor Site
+left lateral wall,boolean,Tumor Site
+anterior wall,boolean,Tumor Site
+posterior wall,boolean,Tumor Site
+dome,boolean,Tumor Site
+other,text,Tumor Site
+cannot be determined,text,Tumor Site
+
+Histologic Type,,Tumor
+Urothelial,,Histologic Type
+
+papillary noninvasive,boolean,Histologic Type
+papillary invasive,boolean,Histologic Type
+in situ,boolean,Histologic Type
+invasive,boolean,Histologic Type
+nested (including large nested) variant,boolean,Histologic Type
+microcystic variant,boolean,Histologic Type
+micropapillary variant,boolean,Histologic Type
+lymphoepithelioma-like variant,boolean,Histologic Type
+plasmacytoid / signet ring cell / diffuse,boolean,Histologic Type
+sarcomatoid variant,boolean,Histologic Type
+giant cell variant,boolean,Histologic Type
+poorly differentiated variant,boolean,Histologic Type
+lipid-rich variant,boolean,Histologic Type
+clear cell variant,boolean,Histologic Type
+urothelial with squamous differentiation,boolean,Histologic Type
+pct_squa_diff,text,urothelial with squamous differentiation
+urothelial with glandular differentiation,boolean,Histologic Type
+pct_glan_diff,text,urothelial with glandular differentiation
+urothelial with trophoblastic differentiation,boolean,Histologic Type
+pct_trop_diff,text,urothelial with trophoblastic differentiation
+urothelial with Müllerian differentiation,boolean,Histologic Type
+pct_mull_diff,text,urothelial with Müllerian differentiation
+
+Squamous,,Histologic Type
+squamous cell carcinoma,boolean,Squamous
+verrucous carcinoma,boolean,Squamous
+squamous cell carcinoma in situ,boolean,Squamous
+
+Glandular,,Histologic Type
+adenocarcinoma,boolean,Glandular
+"adenocarcinoma, enteric",boolean,Glandular
+"adenocarcinoma, mucinous",boolean,Glandular
+"adenocarcinoma, mixed",boolean,Glandular
+adenocarcinoma in situ,boolean,Glandular
+
+Tumors of Müllerian type,,Histologic Type
+clear cell carcinoma,boolean,Tumors of Müllerian type
+endometrioid carcinoma,boolean,Tumors of Müllerian type
+
+Neuroendocrine Tumors,,Histologic Type
+small cell neuroendocrine carcinoma,boolean,Neuroendocrine Tumors
+pct_small_cell,text,Neuroendocrine Tumors
+large cell neuroendocrine carcinoma,boolean,Neuroendocrine Tumors
+pct_large_cell,text,Neuroendocrine Tumors
+well-differentiated neuroendocrine tumor,boolean,Neuroendocrine Tumors
+pct_well-differentiated,text,Neuroendocrine Tumors
+other histologic type not listed (specify),text,Neuroendocrine Tumors
+
+Histologic Grade,,Tumor
+"For urothelial carcinoma, other variants, or divergent differentiation",,Histologic Grade
+low-grade,boolean,"For urothelial carcinoma, other variants, or divergent differentiation"
+high-grade,boolean,"For urothelial carcinoma, other variants, or divergent differentiation"
+other,text,"For urothelial carcinoma, other variants, or divergent differentiation"
+
+For squamous cell carcinoma or adenocarcinoma,,Histologic Grade
+G1: Well-differentiated,boolean,For squamous cell carcinoma or adenocarcinoma
+G2: Moderately differentiated,boolean,For squamous cell carcinoma or adenocarcinoma
+G3: Poorly differentiated,boolean,For squamous cell carcinoma or adenocarcinoma
+GX: Cannot be assessed,boolean,For squamous cell carcinoma or adenocarcinoma
+Other (specify),text,For squamous cell carcinoma or adenocarcinoma
+Not applicable,boolean,For squamous cell carcinoma or adenocarcinoma
+Cannot be assessed,text,For squamous cell carcinoma or adenocarcinoma
+
+Tumor Size,,Tumor
+greatest_dim,text,Tumor Size
+additional_dim1,text,Tumor Size
+additional_dim2,text,Tumor Size
+cannot_be_determined,text,Tumor Size
+
+Tumor Extension,,Tumor
+No evidence of primary tumor,boolean,Tumor Extension
+Noninvasive papillary carcinoma,boolean,Tumor Extension
+Urothelial carcinoma in situ,boolean,Tumor Extension
+Tumor invades lamina propria (subepithelial connective tissue),boolean,Tumor Extension
+
+Tumor invades muscularis propria,,Tumor Extension
+Tumor invades superficial muscularis propria (inner half),boolean,Tumor invades muscularis propria
+Tumor invades deep muscularis propria (outer half),boolean,Tumor invades muscularis propria
+
+Tumor invades perivesical soft tissue,,Tumor Extension
+Microscopically,boolean,Tumor invades perivesical soft tissue
+Macroscopically (extravesical mass),boolean,Tumor invades perivesical soft tissue
+
+Tumor invades adjacent structures,,Tumor Extension
+Prostate (transmural invasion from the bladder tumor),boolean,Tumor invades adjacent structures
+Seminal vesicles,boolean,Tumor invades adjacent structures
+Uterus,boolean,Tumor invades adjacent structures
+Vagina,boolean,Tumor invades adjacent structures
+Adnexae,boolean,Tumor invades adjacent structures
+Pelvis wall,boolean,Tumor invades adjacent structures
+Abdominal wall,boolean,Tumor invades adjacent structures
+Rectum,boolean,Tumor invades adjacent structures
+Other (specify),text,Tumor invades adjacent structures
+Cannot be assessed,text,Tumor invades adjacent structures
+
+Lymphovascular Invasion,,Tumor
+Not identified,boolean,Lymphovascular Invasion
+Present,boolean,Lymphovascular Invasion
+Cannot be determined,text,Lymphovascular Invasion
+
+Tumor Configuration,,Tumor
+Papillary,boolean,Tumor Configuration
+Solid / nodule,boolean,Tumor Configuration
+Flat,boolean,Tumor Configuration
+Ulcerated,boolean,Tumor Configuration
+Cannot be determined,text,Tumor Configuration
+Other (specify),boolean,Tumor Configuration
+
+Margins,,
+Cannot be assessed,boolean,Margins
+Uninvolved by invasive carcinoma and carcinoma in situ/ noninvasive urothelial carcinoma,boolean,Margins
+Uninvolved by invasive carcinoma,boolean,Margins
+
+Involved by invasive carcinoma,,Margins
+Right ureteral margin,boolean,Involved by invasive carcinoma
+Left ureteral margin,boolean,Involved by invasive carcinoma
+Urethral margin,boolean,Involved by invasive carcinoma
+Soft tissue margin,boolean,Involved by invasive carcinoma
+Other margin(s) (specify),text,Involved by invasive carcinoma
+
+Involved by carcinoma in situ/noninvasive high-grade urothelial carcinoma,,Margins
+Right ureteral margin,boolean,Involved by carcinoma in situ/noninvasive high-grade urothelial carcinoma
+Left ureteral margin,boolean,Involved by carcinoma in situ/noninvasive high-grade urothelial carcinoma
+Urethral margin,boolean,Involved by carcinoma in situ/noninvasive high-grade urothelial carcinoma
+Soft tissue margin,boolean,Involved by carcinoma in situ/noninvasive high-grade urothelial carcinoma
+Other margin(s) (specify),Text,Involved by carcinoma in situ/noninvasive high-grade urothelial carcinoma
+
+Involved by noninvasive low-grade urothelial carcinoma/urothelial dysplasia,,Margins
+Right ureteral margin,boolean,Involved by noninvasive low-grade urothelial carcinoma/urothelial dysplasia
+Left ureteral margin,boolean,Involved by noninvasive low-grade urothelial carcinoma/urothelial dysplasia
+Urethral margin,boolean,Involved by noninvasive low-grade urothelial carcinoma/urothelial dysplasia
+Soft tissue margin,boolean,Involved by noninvasive low-grade urothelial carcinoma/urothelial dysplasia
+Other margin(s) (specify),text,Involved by noninvasive low-grade urothelial carcinoma/urothelial dysplasia

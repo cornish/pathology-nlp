@@ -1,0 +1,20 @@
+concept, data_type, parent
+Specimen,,
+Procedure,,Specimen
+Radical prostatectomy,boolean,Procedure
+Other (specify),text,Procedure
+Not specified,boolean,Procedure
+
+Prostate Size,,Specimen
+prostate weight in g,text,Prostate Size
+prostate size in cm,text,Prostate Size
+additional dimension 1 in cm,text,Prostate Size
+additional dimension 2 in cm,text,Prostate Size
+
+Tumor,,
+Histologic Type,,Tumor
+Acinar adenocarcinoma,boolean,Histologic Type
+Ductal adenocarcinoma,boolean,Histologic Type
+Small-cell neuroendocrine carcinoma,boolean,Histologic Type
+Other histologic type not listed (specify),text,Histologic Type
+Histologic Type Comments,text,Histologic Type
