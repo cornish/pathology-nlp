@@ -6,7 +6,7 @@ CREATE TABLE concept(
   concept_id INTEGER PRIMARY KEY AUTOINCREMENT,
   concept TEXT NOT NULL,
   parent_id INTEGER,
-  data_type TEXT NOT NULL,
+  data_type TEXT,
   repeatable BOOLEAN,
   start_date DATE,
   end_date DATE

@@ -1,4 +1,4 @@
-concept, data_type, parent
+concept,data_type,parent
 Specimen,,
 Procedure,,Specimen
 Radical prostatectomy,boolean,Procedure
