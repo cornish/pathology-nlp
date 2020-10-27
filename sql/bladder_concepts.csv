@@ -188,3 +188,65 @@ None identified,boolean,Number of Lymph Nodes Examined
 Specify number,text,Number of Lymph Nodes Examined
 At least,text,Number of Lymph Nodes Examined
 Number cannot be determined (explain),text,Number of Lymph Nodes Examined
+
+Pathologic Stage Classification,,
+TNM Descriptors,,Pathologic Stage Classification
+Not applicable,text,TNM Descriptors
+m (multiple),boolean,TNM Descriptors
+r (recurrent),boolean,TNM Descriptors
+y (post-treatment),boolean,TNM Descriptors
+
+Primary Tumor (pT),,Pathologic Stage Classification
+pTX: Primary tumor cannot be assessed,boolean,Primary Tumor (pT)
+pT0: No evidence of primary tumor,boolean,Primary Tumor (pT)
+pTa: Noninvasive papillary carcinoma,boolean,Primary Tumor (pT)
+pTis: Urothelial carcinoma in situ: “flat tumor”,boolean,Primary Tumor (pT)
+pT1: Tumor invades lamina propria (subepithelial connective tissue),boolean,Primary Tumor (pT)
+pT2: Tumor invades muscularis propria,boolean,Primary Tumor (pT)
+pT2a: Tumor invades superficial muscularis propria (inner half),boolean,Primary Tumor (pT)
+pT2b: Tumor invades deep muscularis propria (outer half),boolean,Primary Tumor (pT)
+pT2 (subcategory cannot be determined),boolean,Primary Tumor (pT)
+pT3: Tumor invades perivesical soft tissue,boolean,Primary Tumor (pT)
+pT3a: Tumor invades perivesical soft tissue microscopically,boolean,Primary Tumor (pT)
+pT3b: Tumor invades perivesical soft tissue macroscopically (extravesical mass),boolean,Primary Tumor (pT)
+pT3 (subcategory cannot be determined),boolean,Primary Tumor (pT)
+"pT4: Extravesical tumor directly invades any of the following: prostatic stroma, seminal vesicles, uterus, vagina, pelvic wall, abdominal wall",boolean,Primary Tumor (pT)
+"pT4a: Extravesical tumor invades directly into prostatic stroma, uterus, or vagina",boolean,Primary Tumor (pT)
+"pT4b: Extravesical tumor invades pelvic wall, abdominal wall",boolean,Primary Tumor (pT)
+pT4 (subcategory cannot be determined),boolean,Primary Tumor (pT)
+
+Regional Lymph Nodes (pN),,Pathologic Stage Classification
+pNX: Regional lymph nodes cannot be assessed,boolean,Regional Lymph Nodes (pN)
+pN0: No lymph node metastasis,boolean,Regional Lymph Nodes (pN)
+"pN1: Single regional lymph node metastasis in the true pelvis (perivesical, obturator, internal and external iliac, or sacral lymph node)",boolean,Regional Lymph Nodes (pN)
+"pN2: Multiple regional lymph node metastasis in the true pelvis (perivesical, obturator, internal and external iliac, or sacral lymph node)",boolean,Regional Lymph Nodes (pN)
+pN3: Lymph node metastasis to the common iliac lymph nodes,boolean,Regional Lymph Nodes (pN)
+
+Distant Metastasis (pM),,Pathologic Stage Classification
+Not applicable - pM cannot be determined from the submitted specimen(s),boolean,Distant Metastasis (pM)
+pM1: Distant metastasis,boolean,Distant Metastasis (pM)
+pM1a: Distant metastasis limited to lymph nodes beyond the common iliacs,boolean,Distant Metastasis (pM)
+pM1b: Non-lymph-node distant metastases,boolean,Distant Metastasis (pM)
+pM1 (subcategory cannot be determined),boolean,Distant Metastasis (pM)
+"Specify Site(s), if known",boolean,pM1c: Other site(s) with or without bone disease
+
+Associated Epithelial Lesions,,
+None identified,boolean,Associated Epithelial Lesions
+Urothelial papilloma,boolean,Associated Epithelial Lesions
+"Urothelial papilloma, inverted type",boolean,Associated Epithelial Lesions
+"Papillary urothelial neoplasm, low malignant potential (PUNLMP)",boolean,Associated Epithelial Lesions
+Urothelial proliferation of uncertain malignant potential,boolean,Associated Epithelial Lesions
+Urothelial dysplasia,boolean,Associated Epithelial Lesions
+Cannot be determined,boolean,Associated Epithelial Lesions
+
+Additional Pathologic Findings,,
+Urothelial dysplasia,boolean,Additional Pathologic Findings
+Adenocarcinoma of prostate (use protocol for carcinoma of prostate),boolean,Additional Pathologic Findings
+Inflammation/regenerative changes,boolean,Additional Pathologic Findings
+Therapy-related changes (specify),text,Additional Pathologic Findings
+Cystitis cystica et glandularis,boolean,Additional Pathologic Findings
+Keratinizing squamous metaplasia,boolean,Additional Pathologic Findings
+Intestinal metaplasia,boolean,Additional Pathologic Findings
+Other (specify),text,Additional Pathologic Findings
+
+Comment(s),text

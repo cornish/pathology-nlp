@@ -146,6 +146,9 @@ No lymph nodes submitted or found,boolean,Regional Lymph Nodes
 
 Number of Lymph Nodes Involved,,Regional Lymph Nodes
 None identified,boolean,Number of Lymph Nodes Involved
+Specify number,text,Number of Lymph Nodes Involved
+At least,text,Number of Lymph Nodes Involved
+Number cannot be determined (explain),text,Number of Lymph Nodes Involved
 
 Specify Site(s),,Number of Lymph Nodes Involved
 
@@ -234,7 +237,7 @@ pT2: Organ confined,boolean,Primary Tumor (pT)
 pT3: Extraprostatic extension,boolean,Primary Tumor (pT)
 pT3a: Extraprostatic extension (unilateral or bilateral) or microscopic invasion of bladder neck,boolean,Primary Tumor (pT)
 pT3b: Tumor invades seminal vesicle(s),boolean,Primary Tumor (pT)
-pT4: Tumor is fixed or invades adjacent structures other than seminal vesicles such as external sphincter, rectum, bladder, levator muscles, and/or pelvic wall,boolean,Primary Tumor (pT)
+"pT4: Tumor is fixed or invades adjacent structures other than seminal vesicles such as external sphincter, rectum, bladder, levator muscles, and/or pelvic wall",boolean,Primary Tumor (pT)
 
 Regional Lymph Nodes (pN),,Pathologic Stage Classification
 pNX: Regional lymph nodes cannot be assessed,boolean,Regional Lymph Nodes (pN)
@@ -242,9 +245,24 @@ pN0: No positive regional nodes,boolean,Regional Lymph Nodes (pN)
 pN1: Metastases in regional node(s),boolean,Regional Lymph Nodes (pN)
 
 Distant Metastasis (pM),,Pathologic Stage Classification
+Not applicable - pM cannot be determined from the submitted specimen(s),boolean,Distant Metastasis (pM)
 pM1: Distant metastasis,boolean,Distant Metastasis (pM)
 pM1a: Nonregional lymph nodes(s),boolean,Distant Metastasis (pM)
 pM1b: Bone(s),boolean,Distant Metastasis (pM)
 pM1c: Other site(s) with or without bone disease,boolean,Distant Metastasis (pM)
 pM1 (subcategory cannot be determined),boolean,Distant Metastasis (pM)
 "Specify Site(s), if known",boolean,pM1c: Other site(s) with or without bone disease
+
+Additional Pathologic Findings,,
+None identified,boolean,Additional Pathologic Findings
+High-grade prostatic intraepithelial neoplasia (PIN),text,Additional Pathologic Findings
+Inflammation (specify type),text,Additional Pathologic Findings
+Atypical adenomatous hyperplasia (adenosis),boolean,Additional Pathologic Findings
+Nodular prostatic hyperplasia,boolean,Additional Pathologic Findings
+Other (specify),text,Additional Pathologic Findings
+
+Ancillary Studies,,
+Specify,text,Ancillary Studies
+Not performed,boolean,Ancillary Studies
+
+Comment(s),text
