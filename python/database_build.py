@@ -47,7 +47,8 @@ cdf[['concept_id', 'concept', 'data_type', 'parent_id']].to_sql(
 # data looks good in table, but pandas treats parent_id column as float to to presence of NULL values
 table_df = pd.read_sql_query('select * from concept',conn)
 table_df.parent_id = table_df.parent_id.astype('Int64')
-
+print('View of imported concepts:')
+print(table_df.head())
 
 # Now load the report data
 data_source = Path(data_path / 'NLP - pros blad - deid - 2020-07-29.xlsx')
@@ -69,4 +70,5 @@ rpts = rpts.drop_duplicates().reset_index(drop=True)
 rpts[['case_id', 'parts', 'diagnosticcomment', 'finaldiagnosis', 'microscopicdescription']].to_sql(
     'original_report', con=conn, index=False, if_exists='replace')
 table_df = pd.read_sql_query('select * from original_report',conn)
-table_df.head()
+print('View of imported original reports:')
+print(table_df.head())

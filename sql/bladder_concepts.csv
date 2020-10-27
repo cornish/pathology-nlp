@@ -1,4 +1,5 @@
 concept,data_type,parent
+
 Specimen,,
 Procedure,,Specimen
 Partial cystectomy,boolean,Procedure
@@ -135,7 +136,7 @@ Cannot be assessed,boolean,Margins
 Uninvolved by invasive carcinoma and carcinoma in situ/ noninvasive urothelial carcinoma,boolean,Margins
 Uninvolved by invasive carcinoma,boolean,Margins
 
-Involved by invasive carcinoma,,Margins
+Involved by invasive carcinoma,boolean,Margins
 Right ureteral margin,boolean,Involved by invasive carcinoma
 Left ureteral margin,boolean,Involved by invasive carcinoma
 Urethral margin,boolean,Involved by invasive carcinoma
@@ -147,7 +148,7 @@ Right ureteral margin,boolean,Involved by carcinoma in situ/noninvasive high-gra
 Left ureteral margin,boolean,Involved by carcinoma in situ/noninvasive high-grade urothelial carcinoma
 Urethral margin,boolean,Involved by carcinoma in situ/noninvasive high-grade urothelial carcinoma
 Soft tissue margin,boolean,Involved by carcinoma in situ/noninvasive high-grade urothelial carcinoma
-Other margin(s) (specify),Text,Involved by carcinoma in situ/noninvasive high-grade urothelial carcinoma
+Other margin(s) (specify),text,Involved by carcinoma in situ/noninvasive high-grade urothelial carcinoma
 
 Involved by noninvasive low-grade urothelial carcinoma/urothelial dysplasia,,Margins
 Right ureteral margin,boolean,Involved by noninvasive low-grade urothelial carcinoma/urothelial dysplasia
@@ -155,3 +156,35 @@ Left ureteral margin,boolean,Involved by noninvasive low-grade urothelial carcin
 Urethral margin,boolean,Involved by noninvasive low-grade urothelial carcinoma/urothelial dysplasia
 Soft tissue margin,boolean,Involved by noninvasive low-grade urothelial carcinoma/urothelial dysplasia
 Other margin(s) (specify),text,Involved by noninvasive low-grade urothelial carcinoma/urothelial dysplasia
+
+Regional Lymph Nodes,,
+No lymph nodes submitted or found,boolean,Regional Lymph Nodes
+
+Number of Lymph Nodes Involved,,Regional Lymph Nodes
+None identified,boolean,Number of Lymph Nodes Involved
+Specify number,text,Number of Lymph Nodes Involved
+At least,text,Number of Lymph Nodes Involved
+Number cannot be determined (explain),text,Number of Lymph Nodes Involved
+
+Size of Largest Metastatic Deposit in Centimeters (cm),,Regional Lymph Nodes
+Specify in Centimeters (cm),text,Size of Largest Metastatic Deposit in Centimeters (cm)
+At least in Centimeters (cm),text,Size of Largest Metastatic Deposit in Centimeters (cm)
+Cannot be determined,text,Size of Largest Metastatic Deposit in Centimeters (cm)
+Specify Site,text,Size of Largest Metastatic Deposit in Centimeters (cm)
+
+Size of Largest Lymph Node Involved in Centimeters (cm),,Regional Lymph Nodes
+Specify in Centimeters (cm),text,Size of Largest Lymph Node Involved in Centimeters (cm)
+At least in Centimeters (cm),text,Size of Largest Lymph Node Involved in Centimeters (cm)
+Cannot be determined,text,Size of Largest Lymph Node Involved in Centimeters (cm)
+Specify Site,text,Size of Largest Lymph Node Involved in Centimeters (cm)
+
+Extranodal Extension,,Regional Lymph Nodes
+Not identified,boolean,Extranodal Extension
+Present,boolean,Extranodal Extension
+Cannot be determined,text,Extranodal Extension
+
+Number of Lymph Nodes Examined,,Regional Lymph Nodes
+None identified,boolean,Number of Lymph Nodes Examined
+Specify number,text,Number of Lymph Nodes Examined
+At least,text,Number of Lymph Nodes Examined
+Number cannot be determined (explain),text,Number of Lymph Nodes Examined

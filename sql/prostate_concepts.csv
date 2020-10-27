@@ -18,3 +18,233 @@ Ductal adenocarcinoma,boolean,Histologic Type
 Small-cell neuroendocrine carcinoma,boolean,Histologic Type
 Other histologic type not listed (specify),text,Histologic Type
 Histologic Type Comments,text,Histologic Type
+
+Histologic Grade,,Tumor
+Grade Group and Gleason Score,,Histologic Grade
+
+Not applicable,boolean,Grade Group and Gleason Score
+Cannot be assessed,boolean,Grade Group and Gleason Score
+Grade group 1 (Gleason Score 3+3=6),boolean,Grade Group and Gleason Score
+Grade group 2 (Gleason Score 3+4=7),boolean,Grade Group and Gleason Score
+Grade group 3 (Gleason Score 4+3=7),boolean,Grade Group and Gleason Score
+Grade group 4 (Gleason Score 4+4=8),boolean,Grade Group and Gleason Score
+Grade group 4 (Gleason Score 3+5=8),boolean,Grade Group and Gleason Score
+Grade group 4 (Gleason Score 5+3=8),boolean,Grade Group and Gleason Score
+Grade group 5 (Gleason Score 4+5=9),boolean,Grade Group and Gleason Score
+Grade group 5 (Gleason Score 5+4=9),boolean,Grade Group and Gleason Score
+Grade group 5 (Gleason Score 5+5=10),boolean,Grade Group and Gleason Score
+Specify Percentage of Pattern 4,text,Grade Group and Gleason Score
+
+Tertiary Pattern 5 (less than 5%) in Overall Gleason Score 7,Histologic Grade
+Not applicable,boolean,Tertiary Pattern 5 (less than 5%) in Overall Gleason Score 7
+Present,boolean,Tertiary Pattern 5 (less than 5%) in Overall Gleason Score 7
+
+If Gleason Score is Greater Than 7 Specify Percentage of Pattern 4,text,Histologic Grade
+If Gleason Score is Greater Than 7 Specify Percentage of Pattern 5,text,Histologic Grade
+
+Intraductal Carcinoma (IDC),,Tumor
+Not identified,boolean,Intraductal Carcinoma (IDC)
+Present,boolean,Intraductal Carcinoma (IDC)
+Cannot be determined,boolean,Intraductal Carcinoma (IDC)
+
+Tumor Quantitation,,Tumor
+Estimated percentage of prostate involved by tumor,text,Tumor Quantitation
+Specify Greatest Dimension of Dominant Nodule in Millimeters (mm),text,Tumor Quantitation
+Additional Dimension in Millimeters (mm) 1,text,Tumor Quantitation
+Additional Dimension in Millimeters (mm) 2,text,Tumor Quantitation
+Location of dominant nodule,text,Tumor Quantitation
+
+Extraprostatic Extension (EPE),,Tumor
+Not identified,boolean,Extraprostatic Extension (EPE)
+"Present, focal",boolean,Extraprostatic Extension (EPE)
+"Present, nonfocal",boolean,Extraprostatic Extension (EPE)
+Cannot be determined,boolean,Extraprostatic Extension (EPE)
+Location of Extraprostatic Extension,,Extraprostatic Extension (EPE)
+Right apical,boolean,Location of Extraprostatic Extension
+Right bladder neck,boolean,Location of Extraprostatic Extension
+Right anterior,boolean,Location of Extraprostatic Extension
+Right lateral,boolean,Location of Extraprostatic Extension
+Right posterolateral (neurovascular bundle),boolean,Location of Extraprostatic Extension
+Right posterior,boolean,Location of Extraprostatic Extension
+Left apical,boolean,Location of Extraprostatic Extension
+Left bladder neck,boolean,Location of Extraprostatic Extension
+Left anterior,boolean,Location of Extraprostatic Extension
+Left lateral,boolean,Location of Extraprostatic Extension
+Left posterolateral (neurovascular bundle),boolean,Location of Extraprostatic Extension
+Left posterior,boolean,Location of Extraprostatic Extension
+Other (specify),text,Location of Extraprostatic Extension
+
+Urinary Bladder Neck Invasion,,Tumor
+Not identified,boolean,Urinary Bladder Neck Invasion
+Present,boolean,Urinary Bladder Neck Invasion
+
+Seminal Vesicle Invasion,,Tumor
+Not identified,boolean,Seminal Vesicle Invasion
+Seminal Vesicle Invasion Present,boolean,Seminal Vesicle Invasion
+Right,boolean,Seminal Vesicle Invasion Present
+Left,boolean,Seminal Vesicle Invasion Present
+Bilateral,boolean,Seminal Vesicle Invasion Present
+Laterality cannot be determined,,Seminal Vesicle Invasion Present
+No seminal vesicle present,boolean,Seminal Vesicle Invasion
+
+Treatment Effect,,Tumor
+No known presurgical therapy,boolean,Treatment Effect
+Not identified,boolean,Treatment Effect
+Radiation therapy effect present,boolean,Treatment Effect
+Hormonal therapy effect present,boolean,Treatment Effect
+Other therapy effect(s) present (specify),text,Treatment Effect
+Cannot be determined,boolean,Treatment Effect
+
+Lymphovascular Invasion,,Tumor
+Not identified,boolean,Lymphovascular Invasion
+Present,boolean,Lymphovascular Invasion
+Cannot be determined,boolean,Lymphovascular Invasion
+
+Perineural Invasion,,Tumor
+Not identified,boolean,Perineural Invasion
+Present,boolean,Perineural Invasion
+
+Margins,,
+Cannot be assessed,boolean,Margins
+Uninvolved by invasive carcinoma,boolean,Margins
+Benign prostate glands present at surgical margin,boolean,Uninvolved by invasive carcinoma
+Involved by invasive carcinoma,boolean,Margins
+Limited (less than 3 mm),boolean,Involved by invasive carcinoma
+Non-limited (greater than or equal to 3 mm),boolean,Involved by invasive carcinoma
+Linear Length of Positive Margin(s) in Millimeters (mm),text,Involved by invasive carcinoma
+
+Focality,,Involved by invasive carcinoma
+Unifocal,boolean,Focality
+Multifocal,boolean,Focality
+Location of Positive Margin(s),,Involved by invasive carcinoma
+Right apical,boolean,Location of Positive Margin(s)
+Right bladder neck,boolean,Location of Positive Margin(s)
+Right anterior,boolean,Location of Positive Margin(s)
+Right lateral,boolean,Location of Positive Margin(s)
+Right postero-lateral (neurovascular bundle),boolean,Location of Positive Margin(s)
+Right posterior,boolean,Location of Positive Margin(s)
+Left apical,boolean,Location of Positive Margin(s)
+Left bladder neck,boolean,Location of Positive Margin(s)
+Left anterior,boolean,Location of Positive Margin(s)
+Left lateral,boolean,Location of Positive Margin(s)
+Left postero-lateral (neurovascular bundle),boolean,Location of Positive Margin(s)
+Left posterior,boolean,Location of Positive Margin(s)
+Other(s) (specify),text,Location of Positive Margin(s)
+
+Margin Positivity in Area of Extraprostatic Extension (EPE),,Involved by invasive carcinoma
+Not identified,boolean,Margin Positivity in Area of Extraprostatic Extension (EPE)
+Margin Positivity in Area of Extraprostatic Extension Present,boolean,Margin Positivity in Area of Extraprostatic Extension (EPE)
+Specify location(s),text,Margin Positivity in Area of Extraprostatic Extension Present
+
+Gleason Pattern at Positive Margin(s),,Involved by invasive carcinoma
+Pattern 3,boolean,Gleason Pattern at Positive Margin(s)
+Pattern 4,boolean,Gleason Pattern at Positive Margin(s)
+Pattern 5,boolean,Gleason Pattern at Positive Margin(s)
+
+Regional Lymph Nodes,,
+No lymph nodes submitted or found,boolean,Regional Lymph Nodes
+
+Number of Lymph Nodes Involved,,Regional Lymph Nodes
+None identified,boolean,Number of Lymph Nodes Involved
+
+Specify Site(s),,Number of Lymph Nodes Involved
+
+Hypogastric,,Specify Site(s)
+Right,boolean,Hypogastric
+Left,boolean,Hypogastric
+Cannot be determined,text,Hypogastric
+
+Obturator,,Specify Site(s)
+Right,boolean,Obturator
+Left,boolean,Obturator
+Cannot be determined,text,Obturator
+
+Internal iliac,,Specify Site(s)
+Right,boolean,Internal iliac
+Left,boolean,Internal iliac
+Cannot be determined,text,Internal iliac
+
+External iliac,,Specify Site(s)
+Right,boolean,External iliac
+Left,boolean,External iliac
+Cannot be determined,text,External iliac
+
+Iliac NOS,,Specify Site(s)
+Right,boolean,Iliac NOS
+Left,boolean,Iliac NOS
+Cannot be determined,text,Iliac NOS
+
+Pelvic NOS,,Specify Site(s)
+Right,boolean,Pelvic NOS
+Left,boolean,Pelvic NOS
+Cannot be determined,text,Pelvic NOS
+
+Lateral sacral,,Specify Site(s)
+Right,boolean,Lateral sacral
+Left,boolean,Lateral sacral
+Cannot be determined,text,Lateral sacral
+
+Presacral,,Specify Site(s)
+Right,boolean,Presacral
+Left,boolean,Presacral
+Cannot be determined,text,Presacral
+
+Promontory,,Specify Site(s)
+Right,boolean,Promontory
+Left,boolean,Promontory
+Cannot be determined,text,Promontory
+
+Sacral NOS,,Specify Site(s)
+Right,boolean,Sacral NOS
+Left,boolean,Sacral NOS
+Cannot be determined,text,Sacral NOS
+
+Size of Largest Metastatic Deposit in Centimeters (cm),,Regional Lymph Nodes
+Specify in Centimeters (cm),text,Size of Largest Metastatic Deposit in Centimeters (cm)
+At least in Centimeters (cm),text,Size of Largest Metastatic Deposit in Centimeters (cm)
+Cannot be determined,text,Size of Largest Metastatic Deposit in Centimeters (cm)
+Specify Site,text,Size of Largest Metastatic Deposit in Centimeters (cm)
+
+Size of Largest Lymph Node Involved in Centimeters (cm),,Regional Lymph Nodes
+Specify in Centimeters (cm),text,Size of Largest Lymph Node Involved in Centimeters (cm)
+At least in Centimeters (cm),text,Size of Largest Lymph Node Involved in Centimeters (cm)
+Cannot be determined,text,Size of Largest Lymph Node Involved in Centimeters (cm)
+Specify Site,text,Size of Largest Lymph Node Involved in Centimeters (cm)
+
+Extranodal Extension,,Regional Lymph Nodes
+Not identified,boolean,Extranodal Extension
+Present,boolean,Extranodal Extension
+Cannot be determined,text,Extranodal Extension
+
+Number of Lymph Nodes Examined,,Regional Lymph Nodes
+None identified,boolean,Number of Lymph Nodes Examined
+Specify number,text,Number of Lymph Nodes Examined
+At least,text,Number of Lymph Nodes Examined
+Number cannot be determined (explain),text,Number of Lymph Nodes Examined
+
+Pathologic Stage Classification,,
+TNM Descriptors,,Pathologic Stage Classification
+Not applicable,text,TNM Descriptors
+m (multiple),boolean,TNM Descriptors
+r (recurrent),boolean,TNM Descriptors
+y (post-treatment),boolean,TNM Descriptors
+
+Primary Tumor (pT),,Pathologic Stage Classification
+pT2: Organ confined,boolean,Primary Tumor (pT)
+pT3: Extraprostatic extension,boolean,Primary Tumor (pT)
+pT3a: Extraprostatic extension (unilateral or bilateral) or microscopic invasion of bladder neck,boolean,Primary Tumor (pT)
+pT3b: Tumor invades seminal vesicle(s),boolean,Primary Tumor (pT)
+pT4: Tumor is fixed or invades adjacent structures other than seminal vesicles such as external sphincter, rectum, bladder, levator muscles, and/or pelvic wall,boolean,Primary Tumor (pT)
+
+Regional Lymph Nodes (pN),,Pathologic Stage Classification
+pNX: Regional lymph nodes cannot be assessed,boolean,Regional Lymph Nodes (pN)
+pN0: No positive regional nodes,boolean,Regional Lymph Nodes (pN)
+pN1: Metastases in regional node(s),boolean,Regional Lymph Nodes (pN)
+
+Distant Metastasis (pM),,Pathologic Stage Classification
+pM1: Distant metastasis,boolean,Distant Metastasis (pM)
+pM1a: Nonregional lymph nodes(s),boolean,Distant Metastasis (pM)
+pM1b: Bone(s),boolean,Distant Metastasis (pM)
+pM1c: Other site(s) with or without bone disease,boolean,Distant Metastasis (pM)
+pM1 (subcategory cannot be determined),boolean,Distant Metastasis (pM)
+"Specify Site(s), if known",boolean,pM1c: Other site(s) with or without bone disease
