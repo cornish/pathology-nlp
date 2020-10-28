@@ -1,7 +1,22 @@
 # Pathology NLP
 
+## Project TO DO List
 
+* Hand map one or two reports
+* Need to process parts from columns 'Parts' and 'Final Diagnosis'; should map parts labels to final diagnosis sections
+* literature review
+* review hand mapped reports
+* Create views to convert long format to wide
+* Also create views with parent concepts (Show me histologic type for these reports sql)
+* Some reports Q: A format per line; others different format. Find some of each
 
+Pathology items:
+* Some reports have “<” encoded as “&lt;”
+* What is "D;" at the beginning of DiagnosticComment colum?
+* Send the CAP document that describes the 7 or so ways to document a CAP report
+* Start paper introduction w/literature review highlighting key literature
+* Hand curated reports
+* 
 ## Project Setup
 
 This project relies upon Python and uses Anaconda to manage installation and dependencies.
@@ -30,9 +45,6 @@ Case level tasks:
 
 Need to create standardized data model + bladder + prostate extensions
 
-bladder: file:///Users/seth/OneDrive%20-%20The%20University%20of%20Colorado%20Denver/Documents/Projects/Cornish_NLP_Proposal/CAP%20ecc/ecc/html%20with%20css/Bladder.Res.180_3.002.011.REL_sdcFDF.html
-prostate: file:///Users/seth/OneDrive%20-%20The%20University%20of%20Colorado%20Denver/Documents/Projects/Cornish_NLP_Proposal/CAP%20ecc/ecc/html%20with%20css/Prostate.Res.128_3.004.001.REL_sdcFDF.html
-
 Questions:
 
 1. Hand Extracted Reports? Adrie will work on this.
@@ -41,6 +53,6 @@ Questions:
    1. Process to parse reports
    2. Extracted structured information
 4. Do we care about Notes? e.g. "Histologic Type (Note B)" Notes are just to help fill out form, don't need to store.
-5. If differeences between PDF and XML, PDF is winner as that's what people fill out.
+5. If differences between PDF and XML, PDF is winner as that's what people fill out.
 
 The `diagnosticcomment`, `finaldiagnosis`, or `microscopicdescription` fields may contain synoptic reports

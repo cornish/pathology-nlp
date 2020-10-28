@@ -34,7 +34,9 @@ cdf['parent_id'] = pd.NA
 for row in cdf[cdf.parent.notna()].itertuples():
     if pd.notna(row.parent):
         if len(cdf[cdf.concept == row.parent]) != 1:
-            print(row.concept, '->', row.parent)
+            print('ERROR - unable to determine parent')
+            print(row.concept, ' (', row.Index, ') -> ', row.parent, sep='')
+            print('   PARENT CANDIATES:')
             print(cdf[cdf.concept == row.parent])
         else:
             cdf.at[row.Index, 'parent_id'] = cdf[cdf.concept == row.parent].index[0]
