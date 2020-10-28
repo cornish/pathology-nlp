@@ -36,7 +36,7 @@ for row in cdf[cdf.parent.notna()].itertuples():
         if len(cdf[cdf.concept == row.parent]) != 1:
             print('ERROR - unable to determine parent')
             print(row.concept, ' (', row.Index, ') -> ', row.parent, sep='')
-            print('   PARENT CANDIATES:')
+            print('   PARENT CANDIDATES:')
             print(cdf[cdf.concept == row.parent])
         else:
             cdf.at[row.Index, 'parent_id'] = cdf[cdf.concept == row.parent].index[0]

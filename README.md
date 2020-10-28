@@ -47,7 +47,7 @@ Need to create standardized data model + bladder + prostate extensions
 
 Questions:
 
-1. Hand Extracted Reports? Adrie will work on this.
+1. Hand Extracted Reports? Path will work on this.
 2. How many? More prostates (~1000s) than bladder. Prostate extracts more consistent
 3. Where will solution live?
    1. Process to parse reports
