@@ -53,7 +53,7 @@ print('View of imported concepts:')
 print(table_df.head())
 
 # Now load the report data
-data_source = Path(data_path / 'NLP - pros blad - deid - 2020-07-29.xlsx')
+data_source = Path(data_path / 'NLP - pros blad - deid - 2020-10-29.xlsx')
 sheets = pd.read_excel(data_source, sheet_name=None)
 ### A few transformations:
 # Change column names to lowercase for easier typing

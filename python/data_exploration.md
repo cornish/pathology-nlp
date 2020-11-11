@@ -40,7 +40,11 @@ Path.cwd()
 ```
 
 ```python
-data_source = Path('../../../Cornish_NLP_Proposal/nlp_data/NLP - pros blad - deid - 2020-07-29.xlsx')
+data_path = Path('../../../Cornish_NLP_Proposal/nlp_data/')
+```
+
+```python
+data_source = data_path / Path('NLP - pros blad - deid - 2020-07-29.xlsx')
 ```
 
 ```python
@@ -64,6 +68,31 @@ cortex = sheets['Cortex_10227cases']
 cortex.columns = map(str.lower, cortex.columns)
 cortex = cortex.applymap(lambda x: x.strip() if isinstance(x, str) else x)
 ```
+
+```python
+copath.to_csv(data_path / 'copath_2020-07-29.csv', index=False)
+cortex.to_csv(data_path / 'cortex_2020-07-29.csv', index=False)
+```
+
+### Cell to look at updated version for comparison purposes
+
+```python
+def updated_data():
+    data_source = data_path / Path('NLP - pros blad - deid - 2020-10-29.xlsx')
+    sheets = pd.read_excel(data_source, sheet_name=None)
+    print(sheets.keys())
+    copath = sheets['CoPath_363cases']
+    copath.columns = map(str.lower, copath.columns)
+    copath = copath.applymap(lambda x: x.strip() if isinstance(x, str) else x)
+    cortex = sheets['Cortex_10227cases']
+    cortex.columns = map(str.lower, cortex.columns)
+    cortex = cortex.applymap(lambda x: x.strip() if isinstance(x, str) else x)
+    copath.to_csv(data_path / 'copath_2020-10-29.csv', index=False)
+    cortex.to_csv(data_path / 'cortex_2020-10-29.csv', index=False)
+updated_data()
+```
+
+### Now back to our regular scheduled program
 
 ```python
 copath
@@ -124,10 +153,6 @@ for index, val in cortex.iloc[0].iteritems():
 for index, val in cortex[cortex.parts == '1: Lymph Node; 2: Lymph Node; 3: Prostate'].iloc[0].iteritems():
     print(index, ':')
     print(val, '\n')
-```
-
-```python
-
 ```
 
 ```python
