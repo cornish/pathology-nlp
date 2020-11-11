@@ -130,12 +130,13 @@ len(md)
 
 ```python
 # if value is empty string, then this is a section?
-# if key has match but value does not have a match, then value should be stored as the concept value (eg '4 mm' and the like)
 matched_concepts = None
 mmatch_concepts = None
 unmatched = {}
+concept_values = None
+
 for key, value in md.items():
-    key_df = concept_df[concept_df.concept == key]
+    key_df = concept_df[concept_df.concept == key].copy()
     if len(key_df) == 1:
         if matched_concepts is None:
             matched_concepts = key_df
@@ -158,14 +159,23 @@ for key, value in md.items():
         else:
             matched_concepts = matched_concepts.append(value_df)
     elif len(value_df) > 1:
+        # multiple matches for values usually means need to use key to find correct concept.
         # add to multiple matches
         if mmatch_concepts is None:
             mmatch_concepts = value_df
         else:
             mmatch_concepts = mmatch_concepts.append(value_df)
     else:
-        print('No match for value:', value)
-        unmatched[key] = value
+        # if key has match but value does not have a match, then value should be stored as the concept value (eg '4 mm' and the like)
+        if len(key_df) == 1 and value != '':
+            key_df['concept_value'] = value
+            if concept_values is None:
+                concept_values = key_df
+            else:
+                concept_values = concept_values.append(key_df)
+        else:
+            print('No match for value:', value)
+            unmatched[key] = value
 matched_concepts.drop_duplicates(inplace=True)
 mmatch_concepts.drop_duplicates(inplace=True)
 ```
@@ -181,6 +191,10 @@ mmatch_concepts
 
 ```python
 unmatched
+```
+
+```python
+concept_values
 ```
 
 ```python

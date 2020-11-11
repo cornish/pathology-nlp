@@ -2,21 +2,25 @@
 
 ## Project TO DO List
 
-* Hand map one or two reports
-* Need to process parts from columns 'Parts' and 'Final Diagnosis'; should map parts labels to final diagnosis sections
+* multiple matches for values usually means need to use key to find correct concept
+* Store matched concepts to database
+  * first purge matches for given report
+  * store new concepts
 * literature review
 * review hand mapped reports
 * Create views to convert long format to wide
 * Also create views with parent concepts (Show me histologic type for these reports sql)
 * Some reports Q: A format per line; others different format. Find some of each
+* X - Hand map one or two reports
+* X - Need to process parts from columns 'Parts' and 'Final Diagnosis'; should map parts labels to final diagnosis sections
 
 Pathology items:
-* Some reports have “<” encoded as “&lt;”
-* What is "D;" at the beginning of DiagnosticComment colum?
-* Send the CAP document that describes the 7 or so ways to document a CAP report
+* Fixed - Some reports have “<” encoded as “&lt;”
+* Fixed - What is "D;" at the beginning of DiagnosticComment colum?
+* X - Send the CAP document that describes the 7 or so ways to document a CAP report
 * Start paper introduction w/literature review highlighting key literature
 * Hand curated reports
-* 
+
 ## Project Setup
 
 This project relies upon Python and uses Anaconda to manage installation and dependencies.
