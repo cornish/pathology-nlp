@@ -70,18 +70,117 @@ table_df.finaldiagnosis[0]
 # pattern mostly from https://stackoverflow.com/a/62642318
 # original 
 # pat=re.compile(r'(^[^\n:]+):[ \t]*([\s\S]*?(?=(?:^[^\n:]*:)|\Z))', flags=re.M)
-pat=re.compile(r'^([A-Z0-9])([:\)])([\S\s]+?(?=^[\n]|^[A-Z]:|\Z))', flags=re.M)
+get_sections_pat = re.compile(r'^([A-Z0-9])([:\)])([\S\s]+?(?=^[\n]|^[A-Z]:|\Z))', flags=re.M)
+get_subsections_pat = re.compile(r'(^[^\n:]+):[ \t]*([\s\S]*?(?=(?:^[^\n:]*:)|\Z))', flags=re.M)
 
 def get_sections(instr):
-    return {m.group(1).strip() : m.group(3).strip() for m in pat.finditer(instr)}
+    return {m.group(1).strip() : m.group(3).strip() for m in get_sections_pat.finditer(instr)}
+
+def get_subsections(instr):
+    return {re.sub('^\W*\s*', '', m.group(1).strip()) : m.group(2).strip()
+            for m in get_subsections_pat.finditer(instr)}
 ```
 
 ```python
-get_sections(table_df.parts[0])
+parts = get_sections(table_df.parts[0])
+parts
 ```
 
 ```python
-get_sections(table_df.finaldiagnosis[0])
+finaldiagnosis = get_sections(table_df.finaldiagnosis[0])
+finaldiagnosis
+```
+
+```python
+subsection = get_subsections(finaldiagnosis['E'])
+subsection
+```
+
+```python
+subsection.keys()
+```
+
+```python
+subsection['URINARY BLADDER']
+```
+
+```python
+table_df.microscopicdescription[0]
+```
+
+```python
+md = get_subsections(table_df.microscopicdescription[0])
+md
+```
+
+```python
+md.keys()
+```
+
+```python
+# do any of the keys match concepts?
+q = "select * from concept"
+concept_df = pd.read_sql_query(q,conn)
+concept_df
+```
+
+```python
+len(md)
+```
+
+```python
+# if value is empty string, then this is a section?
+# if key has match but value does not have a match, then value should be stored as the concept value (eg '4 mm' and the like)
+matched_concepts = None
+mmatch_concepts = None
+unmatched = {}
+for key, value in md.items():
+    key_df = concept_df[concept_df.concept == key]
+    if len(key_df) == 1:
+        if matched_concepts is None:
+            matched_concepts = key_df
+        else:
+            matched_concepts = matched_concepts.append(key_df)
+    elif len(key_df) > 1:
+        # add to multiple matches
+        if mmatch_concepts is None:
+            mmatch_concepts = key_df
+        else:
+            mmatch_concepts = mmatch_concepts.append(key_df)
+    else:
+        print('No match for key:', key)
+        unmatched[key] = value
+    
+    value_df = concept_df[concept_df.concept == value]
+    if len(value_df) == 1:
+        if matched_concepts is None:
+            matched_concepts = value_df
+        else:
+            matched_concepts = matched_concepts.append(value_df)
+    elif len(value_df) > 1:
+        # add to multiple matches
+        if mmatch_concepts is None:
+            mmatch_concepts = value_df
+        else:
+            mmatch_concepts = mmatch_concepts.append(value_df)
+    else:
+        print('No match for value:', value)
+        unmatched[key] = value
+matched_concepts.drop_duplicates(inplace=True)
+mmatch_concepts.drop_duplicates(inplace=True)
+```
+
+```python
+print(len(matched_concepts))
+matched_concepts
+```
+
+```python
+mmatch_concepts
+```
+
+```python
+unmatched
 ```
 
 ```python
