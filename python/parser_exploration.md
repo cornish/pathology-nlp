@@ -121,58 +121,82 @@ md.keys()
 # do any of the keys match concepts?
 q = "select * from concept"
 concept_df = pd.read_sql_query(q,conn)
-concept_df
+concept_df.parent_id = concept_df.parent_id.astype("Int64")
 ```
 
 ```python
-len(md)
+md.items()
 ```
 
 ```python
+# create some transformed columns for matching
+concept_df['concept_lower'] = concept_df.concept.str.lower()
+concept_df['concept_no_spec_char'] = concept_df.concept_lower.str.replace(r'[-()]', '')
+concept_df['concept_no_paren'] = concept_df.concept_lower.str.replace(r'\([^)]*\)', '').str.strip()
+
+def find_match(search_term):
+    st_lower = search_term.lower()
+    st_no_spec_char = re.sub('[-()]', '', st_lower)
+    st_no_paren = re.sub('\([^)]*\)', '', st_lower).strip()
+    
+    df = concept_df[(concept_df.concept == search_term) |
+                    (concept_df.concept_lower == st_lower) |
+                    (concept_df.concept_no_spec_char == st_no_spec_char) |
+                    (concept_df.concept_no_paren == st_no_paren)
+              ].copy()
+    return df
+```
+
+```python
+find_match('Extraprostatic Extension')
+```
+
+```python
+empty_df = pd.DataFrame(columns=['concept_id',
+                                 'concept',
+                                 'data_type',
+                                 'parent_id'])
 # if value is empty string, then this is a section?
-matched_concepts = None
-mmatch_concepts = None
+matched_concepts = empty_df.copy()
+mmatch_concepts = empty_df.copy()
 unmatched = {}
-concept_values = None
+concept_values = empty_df.copy()
 
 for key, value in md.items():
     key_df = concept_df[concept_df.concept == key].copy()
     if len(key_df) == 1:
-        if matched_concepts is None:
-            matched_concepts = key_df
-        else:
-            matched_concepts = matched_concepts.append(key_df)
+        matched_concepts = matched_concepts.append(key_df)
     elif len(key_df) > 1:
         # add to multiple matches
-        if mmatch_concepts is None:
-            mmatch_concepts = key_df
-        else:
-            mmatch_concepts = mmatch_concepts.append(key_df)
+        mmatch_concepts = mmatch_concepts.append(key_df)
     else:
         print('No match for key:', key)
         unmatched[key] = value
     
     value_df = concept_df[concept_df.concept == value]
     if len(value_df) == 1:
-        if matched_concepts is None:
-            matched_concepts = value_df
-        else:
-            matched_concepts = matched_concepts.append(value_df)
+        matched_concepts = matched_concepts.append(value_df)
     elif len(value_df) > 1:
         # multiple matches for values usually means need to use key to find correct concept.
         # add to multiple matches
-        if mmatch_concepts is None:
-            mmatch_concepts = value_df
+        if (len(key_df) == 1):
+            new_match = value_df[value_df.parent_id == key_df.concept_id.values[0]]
+            if len(new_match) == 1:
+                matched_concepts = matched_concepts.append(new_match)
+            else:
+                 mmatch_concepts = mmatch_concepts.append(value_df)
         else:
+            print('--------- multiple potential matches found -------------')
+            print(value_df)
+            print('key_df:')
+            print(key_df)
+            print('--------------------------------------------------------')
             mmatch_concepts = mmatch_concepts.append(value_df)
     else:
         # if key has match but value does not have a match, then value should be stored as the concept value (eg '4 mm' and the like)
         if len(key_df) == 1 and value != '':
             key_df['concept_value'] = value
-            if concept_values is None:
-                concept_values = key_df
-            else:
-                concept_values = concept_values.append(key_df)
+            concept_values = concept_values.append(key_df)
         else:
             print('No match for value:', value)
             unmatched[key] = value

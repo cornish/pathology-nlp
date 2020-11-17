@@ -2,10 +2,11 @@
 
 ## Project TO DO List
 
-* multiple matches for values usually means need to use key to find correct concept
+* Create aliases and process to load/match them
 * Store matched concepts to database
   * first purge matches for given report
   * store new concepts
+* Update parser to run over more than just 1 report (probably switch from NB to .py file)
 * literature review
 * review hand mapped reports
 * Create views to convert long format to wide
@@ -13,6 +14,7 @@
 * Some reports Q: A format per line; others different format. Find some of each
 * X - Hand map one or two reports
 * X - Need to process parts from columns 'Parts' and 'Final Diagnosis'; should map parts labels to final diagnosis sections
+* X - multiple matches for values usually means need to use key to find correct concept
 
 Pathology items:
 * Fixed - Some reports have “<” encoded as “&lt;”
