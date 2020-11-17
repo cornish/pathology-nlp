@@ -44,7 +44,7 @@ for row in cdf[cdf.parent.notna()].itertuples():
 cdf.parent_id = cdf.parent_id.astype('Int64')
 cdf = cdf.reset_index().rename(columns={'index': 'concept_id'})
 cdf[['concept_id', 'concept', 'data_type', 'parent_id']].to_sql(
-    'concept', con=conn, index=False, if_exists='replace')
+    'concept', con=conn, index=False, if_exists='append')
 
 # data looks good in table, but pandas treats parent_id column as float to to presence of NULL values
 table_df = pd.read_sql_query('select * from concept',conn)
@@ -70,7 +70,7 @@ cortex = cortex.applymap(lambda x: x.strip() if isinstance(x, str) else x)
 rpts = pd.concat([copath, cortex])
 rpts = rpts.drop_duplicates().reset_index(drop=True)
 rpts[['case_id', 'parts', 'diagnosticcomment', 'finaldiagnosis', 'microscopicdescription']].to_sql(
-    'original_report', con=conn, index=False, if_exists='replace')
+    'original_report', con=conn, index=False, if_exists='append')
 table_df = pd.read_sql_query('select * from original_report',conn)
 print('View of imported original reports:')
 print(table_df.head())

@@ -47,10 +47,10 @@ CREATE TABLE concept_domain_mapping (
 DROP TABLE IF EXISTS original_report;
 CREATE TABLE original_report(
   case_id TEXT NOT NULL,
-  parts TEXT NOT NULL,
-  diagnosticcomment TEXT NOT NULL,
-  finaldiagnosis TEXT NOT NULL,
-  microscopicdescription TEXT NOT NULL,
+  parts TEXT,
+  diagnosticcomment TEXT,
+  finaldiagnosis TEXT,
+  microscopicdescription TEXT,
   PRIMARY KEY (case_id)
 );
 
