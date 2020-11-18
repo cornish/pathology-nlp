@@ -2,7 +2,12 @@
 
 ## Project TO DO List
 
+* Match based on edit distance?
+  * https://www.nltk.org/api/nltk.metrics.html
+  * https://github.com/seatgeek/fuzzywuzzy
+  * https://python.gotrained.com/nltk-edit-distance-jaccard-distance/
 * Create aliases and process to load/match them
+* key/value pair doesn't work for section headings.
 * Store matched concepts to database
   * first purge matches for given report
   * store new concepts
