@@ -56,9 +56,18 @@ CREATE TABLE original_report(
 
 DROP TABLE IF EXISTS structured_report;
 CREATE TABLE structured_report (
-  case_id TEXT NOT NULL PRIMARY KEY,
-  concept_id NOT NULL,
-  concept_value NOT NULL,
+  case_id TEXT NOT NULL,
+  concept_id INTEGER NOT NULL,
+  concept_value TEXT,
   FOREIGN KEY(case_id) REFERENCES original_report(case_id),
-  FOREIGN KEY(concept_id) REFERENCES concept(concept_id)
+  FOREIGN KEY(concept_id) REFERENCES concept(concept_id),
+  UNIQUE(case_id, concept_id, concept_value)
+);
+
+DROP TABLE IF EXISTS unmatched_concepts;
+CREATE TABLE unmatched_concepts (
+  case_id TEXT NOT NULL,
+  concept_candidate TEXT NOT NULL,
+  FOREIGN KEY(case_id) REFERENCES original_report(case_id),
+  UNIQUE(case_id, concept_candidate)
 );

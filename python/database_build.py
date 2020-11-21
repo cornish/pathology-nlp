@@ -14,7 +14,10 @@ except Exception as e:
     print('Exception encountered when opening database:', e)
 
 with open(Path(sql_path / 'database_build.sql')) as sqlfile:
-    conn.executescript(sqlfile.read())
+    try:
+        conn.executescript(sqlfile.read())
+    except Exception as e:
+        print('Exception encountered when executing database_build.sql:', e)
 
 q = "select * from sqlite_master where type='table'"
 table_df = pd.read_sql_query(q,conn)

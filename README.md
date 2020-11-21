@@ -2,15 +2,15 @@
 
 ## Project TO DO List
 
+* train deep learning model based on partially matched concepts?
+  * get list of unmatched concepts
+  * have Toby/Adrie help with mapping (for training)
+  * create classifier for unmatched phrases
 * Match based on edit distance?
   * https://www.nltk.org/api/nltk.metrics.html
   * https://github.com/seatgeek/fuzzywuzzy
   * https://python.gotrained.com/nltk-edit-distance-jaccard-distance/
 * Create aliases and process to load/match them
-* key/value pair doesn't work for section headings.
-* Store matched concepts to database
-  * first purge matches for given report
-  * store new concepts
 * Update parser to run over more than just 1 report (probably switch from NB to .py file)
 * literature review
 * review hand mapped reports
@@ -20,6 +20,10 @@
 * X - Hand map one or two reports
 * X - Need to process parts from columns 'Parts' and 'Final Diagnosis'; should map parts labels to final diagnosis sections
 * X - multiple matches for values usually means need to use key to find correct concept
+* X - key/value pair doesn't work for section headings e.g. "Pathologic Staging (pTNM)"
+* X - Store matched concepts to database
+  * first purge matches for given report
+  * store new concepts
 
 Pathology items:
 * Fixed - Some reports have “<” encoded as “&lt;”
@@ -67,3 +71,8 @@ Questions:
 5. If differences between PDF and XML, PDF is winner as that's what people fill out.
 
 The `diagnosticcomment`, `finaldiagnosis`, or `microscopicdescription` fields may contain synoptic reports
+
+## For Paper
+
+* Need to report micro- and macro-averaged precision, recall, and F score.
+* Calculate 95% confidence intervals by bootstrapping from test set
