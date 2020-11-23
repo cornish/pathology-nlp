@@ -35,7 +35,7 @@ Grade group 5 (Gleason Score 5+4=9),boolean,Grade Group and Gleason Score
 Grade group 5 (Gleason Score 5+5=10),boolean,Grade Group and Gleason Score
 Specify Percentage of Pattern 4,text,Grade Group and Gleason Score
 
-Tertiary Pattern 5 (less than 5%) in Overall Gleason Score 7,Histologic Grade
+Tertiary Pattern 5 (less than 5%) in Overall Gleason Score 7,,Histologic Grade
 Not applicable,boolean,Tertiary Pattern 5 (less than 5%) in Overall Gleason Score 7
 Present,boolean,Tertiary Pattern 5 (less than 5%) in Overall Gleason Score 7
 

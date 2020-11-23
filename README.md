@@ -2,19 +2,21 @@
 
 ## Project TO DO List
 
+* Summarize unmatched concepts (similar to matched concepts)
+* Create views to convert long format to wide
+  * which features/concepts do you care about?
 * train deep learning model based on partially matched concepts?
   * get list of unmatched concepts
   * have Toby/Adrie help with mapping (for training)
-  * create classifier for unmatched phrases
+  * create classifier for unmatched phrases (extraction)
 * Match based on edit distance?
   * https://www.nltk.org/api/nltk.metrics.html
   * https://github.com/seatgeek/fuzzywuzzy
   * https://python.gotrained.com/nltk-edit-distance-jaccard-distance/
 * Create aliases and process to load/match them
-* Update parser to run over more than just 1 report (probably switch from NB to .py file)
+  * Use DL instead?
 * literature review
 * review hand mapped reports
-* Create views to convert long format to wide
 * Also create views with parent concepts (Show me histologic type for these reports sql)
 * Some reports Q: A format per line; others different format. Find some of each
 * X - Hand map one or two reports
@@ -24,6 +26,7 @@
 * X - Store matched concepts to database
   * first purge matches for given report
   * store new concepts
+* X - Update parser to run over more than just 1 report (probably switch from NB to .py file)
 
 Pathology items:
 * Fixed - Some reports have “<” encoded as “&lt;”
@@ -76,3 +79,12 @@ The `diagnosticcomment`, `finaldiagnosis`, or `microscopicdescription` fields ma
 
 * Need to report micro- and macro-averaged precision, recall, and F score.
 * Calculate 95% confidence intervals by bootstrapping from test set
+
+## Information Extraction References
+
+* https://scikit-learn.org/stable/tutorial/text_analytics/working_with_text_data.html
+* https://www.osti.gov/pages/servlets/purl/1408007
+* https://academic.oup.com/jamia/article/27/1/89/5618621?guestAccessKey=815a822e-35ee-4904-a8ee-46c652ecd811#supplementary-data
+* https://medium.com/@kormilitzin/med7-clinical-information-extraction-system-in-python-and-spacy-5e6f68ab1c68
+* https://blogs.itemis.com/en/deep-learning-for-information-extraction
+* https://www.analyticsvidhya.com/blog/2019/09/introduction-information-extraction-python-spacy/
